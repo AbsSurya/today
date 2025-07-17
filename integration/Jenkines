@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Print Date') {
+            steps {
+                script {
+                    def currentDate = new Date().format("yyyy-MM-dd HH:mm:ss", TimeZone.getTimeZone('UTC'))
+                    echo "Current Date and Time (UTC): ${currentDate}"
+                }
+            }
+        }
+    }
+}
